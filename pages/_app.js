@@ -3,6 +3,8 @@ import Layout from '../components/Layout'
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../app/globals.css';
+import '../app/grape.module.css';
+import 'grapesjs/dist/css/grapes.min.css';
 
 function MyApp({ Component, pageProps }) {
   const [isDarkMode, setIsDarkMode] = useState(false);

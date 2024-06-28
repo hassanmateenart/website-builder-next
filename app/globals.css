@@ -1,9 +1,9 @@
 :root {
   /* Color Variables */
-  --primary-color: #1e1e1e;
+  --primary-color: #463a3c;
   --secondary-color: #2ecc71;
-  --accent-color: #000000;
-  --background-color: #1e1e1e;
+  --accent-color: #463a3c;
+  --background-color: #463a3c;
   --btn-bg: #478ce9;
   --text-color: #ffffff;
   --muted-text-color: #95a5a6;
@@ -95,13 +95,13 @@ button:hover {
 
 body {
   --background-color: #ffffff;
-  --text-color: #000000;
+  --text-color: #463a3c;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
 body.dark-mode {
-  --background-color: #121212;
+  --background-color: #463a3c;
   --text-color: #ffffff;
 }
 

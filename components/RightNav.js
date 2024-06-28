@@ -3,7 +3,7 @@ import styles from "../app/style.module.css";
 
 const RightNav = () => {
   return (
-    <div className={styles['design-property']}>
+    <div className={styles['design-property']} id='left_section'>
         <div className={styles['publish-design']}>
             <p>Design</p>
             <button>Publish</button>
