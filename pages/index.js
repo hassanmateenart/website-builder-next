@@ -64,6 +64,11 @@ export default function Home() {
             const editor = editorRef.current;
             const html = editor.getHtml();
             const css = editor.getCss();
+            console.log(html.trim())
+            if (html.trim() == "<body></body>" ) {
+                alert('There is nothing to download.');
+                return;
+            }
             const blob = new Blob([`<style>${css}</style>${html}`], { type: 'text/html' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
@@ -74,18 +79,32 @@ export default function Home() {
         }
     };
 
+    const handleNew = async () => {
+        // Save current progress if there's any
+        if (editorRef.current && pageName.trim() !== '') {
+            await saveTemplate();
+        }
+        // Clear the canvas
+        if (editorRef.current) {
+            const editor = editorRef.current;
+            editor.setComponents('');
+            editor.setStyle('');
+            // editor.clear(); // This will clear the editor canvas
+            setPageName(''); // Reset the page name input after clearing
+        }
+    };
+
     useEffect(() => {
         loadTemplates();
     }, []);
 
     return (
         <>
-            <Header onClick={toggleModal} onToggleDarkMode={toggleDarkMode} onSave={saveTemplate} onDownload={downloadTemplate} />
+            <Header onClick={toggleModal} onToggleDarkMode={toggleDarkMode} onSave={saveTemplate} onDownload={downloadTemplate} onNew={handleNew} />
             <section className={styles['working-main-area']}>
                 <LeftNav templates={templates} loadTemplate={loadTemplate} />
                 <Board isModalOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} editorRef={editorRef} />
-                <RightNav />
-                <div className={styles['save-container']}>
+                <div className='save-container'>
                     <input 
                         type="text" 
                         value={pageName} 

@@ -1,18 +1,18 @@
 import Switch from './Switch';
 import styles from '../app/style.module.css';
 
-const Header = ({ onClick, onToggleDarkMode, onSave, onDownload }) => {
+const Header = ({ onClick, onToggleDarkMode, onSave, onDownload, onNew }) => {
   return (
     <header className={styles.header}>
         <div className={`${styles['main-header']} ${styles['sec-space']}`}>
             <div className={styles['control-section']}>
                 <ul className={styles['controls-menu']}>
                     <li className={styles['control-icon-list']}>
-                        <a href='#' onClick={onClick}>New</a>
+                        <a href='#' onClick={onNew}>New</a>
                     </li>
-                    <li className={styles['control-icon-list']}>
+                    {/* <li className={styles['control-icon-list']}>
                         <button onClick={onSave}>Save</button>
-                    </li>
+                    </li> */}
                     <li className={styles['control-icon-list']}>
                         <button onClick={onDownload}>Download</button>
                     </li>
@@ -20,7 +20,7 @@ const Header = ({ onClick, onToggleDarkMode, onSave, onDownload }) => {
                 </ul>
             </div>
             <div className={styles['file-name']}>
-                <p>Website</p>
+                <p>Web Page Builder</p>
             </div>
             <div className={styles['control-right']}>
                 <Switch onChange={onToggleDarkMode} />

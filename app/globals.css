@@ -118,4 +118,18 @@ body.dark-mode {
 .main-header {
   background-color: var(--background-color);
   color: var(--text-color);
+} 
+
+.save-container {
+  padding: 10px;
+}
+
+.save-container input {
+  margin-bottom: 10px;
+  padding: 4px 14px;
+  border-radius: 4px;
+}
+
+header ul li a {
+  color: var(--text-color);
 }
