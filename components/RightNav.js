@@ -5,8 +5,7 @@ const RightNav = () => {
   return (
     <div className={styles['design-property']} id='left_section'>
         <div className={styles['publish-design']}>
-            <p>Design</p>
-            <button>Publish</button>
+            <button>Save</button>
         </div>
         <div className={styles['selct-item-property']}>
             <p>Pages</p>
